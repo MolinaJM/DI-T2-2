@@ -23,6 +23,6 @@ public class miControlador implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        miEtiqueta.setText("");
+        //miEtiqueta.setText("");
     }
 }

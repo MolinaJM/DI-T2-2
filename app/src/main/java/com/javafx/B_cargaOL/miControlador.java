@@ -13,12 +13,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
- *
+ * Ejemplo de carga de combo, TV y LV
  * @author Molina
  */
 public class miControlador implements Initializable {
-    
-     ObservableList<String> nombresRarosElfos = FXCollections.observableArrayList(
+
+    ObservableList<String> nombresRarosElfos = FXCollections.observableArrayList(
             "Aelrindel",
             "Eldarion",
             "Galadhon",
@@ -33,25 +33,19 @@ public class miControlador implements Initializable {
             "Mithrandiriel",
             "Silmarien",
             "Eärfalas",
-            "Míriel"
-        );
-
+            "Míriel");
 
     ObservableList<Robot> listaRobots = FXCollections.observableArrayList(
-            new Robot("Robocop", "Robocop")
-    );
-    
-      ObservableList<String> seriesLista = FXCollections.observableArrayList(
-                "Breaking Bad",
-                "The Expanse",
-                "Stranger Things",
-                "Last Of Us",
-                "The Mandalorian",
-                "Friends",
-                "The IT"
-        );
-  
-     
+            new Robot("Robocop", "Robocop"));
+
+    ObservableList<String> seriesLista = FXCollections.observableArrayList(
+            "Breaking Bad",
+            "The Expanse",
+            "Stranger Things",
+            "Last Of Us",
+            "The Mandalorian",
+            "Friends",
+            "The IT");
 
     @FXML
     private ComboBox<String> miCombo;
@@ -70,14 +64,14 @@ public class miControlador implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //Configura combo
+        // Configura combo
         miCombo.setItems(nombresRarosElfos);
-        
-        //Configura ListView
-         miLista.setItems(seriesLista);
-        
-        //Configura TableView
-        //Los campos han de coincidir con los campos del objeto 
+
+        // Configura ListView
+        miLista.setItems(seriesLista);
+
+        // Configura TableView
+        // Los campos han de coincidir con los campos del objeto
         nombreColumn.setCellValueFactory(new PropertyValueFactory<Robot, String>("nombre"));
         peliColumn.setCellValueFactory(new PropertyValueFactory<Robot, String>("peli"));
         miTabla.setItems(listaRobots);
